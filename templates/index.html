@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Mood Companion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="welcome-mode">
+  <canvas id="bgCanvas"></canvas>
+
+  <div class="app">
+    <header>
+      <h1>Hey — how are you feeling today?</h1>
+      <p class="sub">Choose one and I’ll share a short, healing quote and real self-care tips.</p>
+    </header>
+
+    <div class="mood-row">
+      <button class="mood-btn" data-mood="Happy">😊 Happy</button>
+      <button class="mood-btn" data-mood="Sad">😢 Sad</button>
+      <button class="mood-btn" data-mood="Angry">😡 Angry</button>
+      <button class="mood-btn" data-mood="Anxious">😰 Anxious</button>
+      <button class="mood-btn" data-mood="Calm">😌 Calm</button>
+    </div>
+
+    <main id="panel" class="hidden">
+      <blockquote id="quote">—</blockquote>
+      <ul id="tips" class="tips-list"></ul>
+    </main>
+
+    <section class="review">
+      <textarea id="reviewInput" placeholder="If you want, share how this made you feel (optional)"></textarea>
+      <button id="reviewBtn">Send feedback</button>
+      <p id="reviewMsg" class="muted"></p>
+    </section>
+
+    <footer class="muted small">Made with ❤️ — your feelings matter.</footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
